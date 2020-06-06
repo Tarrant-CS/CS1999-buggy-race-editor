@@ -5,6 +5,9 @@
 {% block content %}
 
   <h1>Make buggy</h1>
+  <p>
+    {{ msg }}
+  </p>
   <form action="/new" method="post">
     <label for="qty_wheels">Number of wheels:</label>
     <input type="text" name="qty_wheels" />
@@ -14,6 +17,7 @@
     <br>
     <input type="submit" class="button">
   </form>
+  <p>
     <a href="/" class="button">home</a>
-   </p>
+  </p>
 {% endblock %}

@@ -7,7 +7,7 @@ body {
   margin: 0;
   padding: 0;
   font-size: 1.2em;
-  color: #000000;
+  color: #fffbfb;
   background: repeating-linear-gradient(
     45deg,
     #ffffee,
@@ -19,7 +19,9 @@ body {
 .main-content {
   min-height:100vh;
   padding: 1em;
-  background: white;
+  background-image: url(buggy.jpg);
+  background-size: cover;
+  background-position: center;
   margin: 0 0 0 3em;
 }
 h1 {
