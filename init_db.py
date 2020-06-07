@@ -29,7 +29,22 @@ con.execute("""
     qty_wheels            INTEGER DEFAULT 4,
     flag_color            VARCHAR(20),
     flag_color_secondary  VARCHAR(20),
-    flag_pattern          VARCHAR(20)
+    flag_pattern          VARCHAR(20),
+    power_type            VARCHAR(20),
+    power_units           INTEGER,
+    aux_power_type        VARCHAR(20),
+    aux_power_units       INTEGER,
+    hamster_booster       INTEGER,
+    tyres                 VARCHAR(20),
+    qty_tyres             INTEGER,
+    armour                VARCHAR(20),
+    attack                VARCHAR(20),
+    qty_attacks           INTEGER,
+    fireproof             BOOLEAN, 
+    insulated             BOOLEAN, 
+    antibiotic            BOOLEAN,
+    banging               BOOLEAN,
+    algo                  VARCHAR(20)
   )
 
 """)

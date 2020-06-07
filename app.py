@@ -33,24 +33,47 @@ def create_buggy():
     return render_template("buggy-form.html", buggy = record)
   elif request.method == 'POST':
     msg=""
+    violation=""
     qty_wheels = request.form['qty_wheels']
+    power_units = request.form['power_units']
+    aux_power_units = request.form['aux_power_units']
+    qty_tyres = request.form['qty_tyres']
+    qty_attacks = request.form['qty_attacks']
+    hamster_booster = request.form['hamster_booster']
     if not qty_wheels.isdigit():
-      msg = f'{qty_wheels} is not a digit, please input a digit'
+      msg = 'This is not a digit, please input a digit'
       return render_template('buggy-form.html', msg = msg)
+    if not (int(qty_wheels) % 2 == 0):
+      violation = 'RULES VIOLATION: Number of wheels must be even'
+    if (int(qty_wheels) < 3):
+      violation = 'RULES VIOLATION: Number of wheels must be greater than 3'
+    
     try: 
       flag_color = request.form['flag_color']
+      power_type = request.form['power_type']
+      aux_power_type = request.form['aux_power_type']
+      flag_pattern = request.form['flag_pattern']
+      flag_color_secondary = request.form['flag_color_secondary']
+      tyres = request.form['tyres']
+      armour = request.form['armour']
+      attack = request.form['attack']
+      fireproof = request.form['fireproof']
+      insulated = request.form['insulated']
+      antibiotic = request.form['antibiotic']
+      banging = request.form['banging']
+      algo = request.form['algo']
       with sql.connect(DATABASE_FILE) as con:
         cur = con.cursor()
-        cur.execute("UPDATE buggies set qty_wheels=?, flag_color=? WHERE id=?", (
-          qty_wheels, flag_color,  DEFAULT_BUGGY_ID))
+        cur.execute("UPDATE buggies set qty_wheels=?, flag_color=?, power_type=?, aux_power_type=?, flag_pattern=?, flag_color_secondary=?, tyres=?, armour=?, attack=?, fireproof=?, insulated=?, antibiotic=?, banging=?, algo=?, power_units=?, aux_power_units=?, qty_tyres=?, qty_attacks=? WHERE id=?", (
+          qty_wheels, flag_color, power_type, aux_power_type, flag_pattern, flag_color_secondary, tyres, armour, attack, fireproof, insulated, antibiotic, banging, algo, power_units, aux_power_units, qty_tyres, qty_attacks, DEFAULT_BUGGY_ID))
         con.commit()
         msg = "Record successfully saved"
-    except:
+    except Exception as e:
       con.rollback()
-      msg = "error in update operation"
+      msg += e
     finally:
       con.close()
-      return render_template("updated.html", msg = msg)
+      return render_template("updated.html", msg = msg, violation = violation)
 
 #------------------------------------------------------------
 # a page for displaying the buggy

@@ -12,8 +12,153 @@
     <label for="qty_wheels">Number of wheels:</label>
     <input type="text" name="qty_wheels" value="{{ buggy['qty_wheels'] }}" />
     <br>
+    <label for="power_type">Primary Motive Power:</label>
+    <select name="power_type">
+      <option>Petroleum-fuelled internal combustion engine</option>
+      <option>Fusion reactor</option>
+      <option>Steam engine</option>
+      <option>Bio-fuelled internal combustion engine</option>
+      <option>Lithium-ion battery</option>
+      <option>Rocket fuel</option>
+      <option>Hamster</option>
+      <option>Thermonuclear reactor</option>
+      <option>Bank of solar panels</option>
+      <option>Sailing rig</option>
+    </select>
+    <br>
+    <label for='power_units'>Quantity of primary power units</label>
+    <input type="text" name="power_units" value="{{ buggy['power_units'] }}"/>
+    <br>
+    <label for="aux_power_type">Auxiliary motive power</label>
+    <select name="aux_power_type">
+      <option>Petroleum-fuelled internal combustion engine</option>
+      <option>Fusion reactor</option>
+      <option>Steam engine</option>
+      <option>Bio-fuelled internal combustion engine</option>
+      <option>Lithium-ion battery</option>
+      <option>Rocket fuel</option>
+      <option>Hamster</option>
+      <option>Thermonuclear reactor</option>
+      <option>Bank of solar panels</option>
+      <option>Sailing rig</option>
+    </select>
+    <br>
+    <label for='aux_power_units'>Quantity of Auxiliary power units</label>
+    <input type="text" name="aux_power_units" value="{{ buggy['aux_power_units'] }}"/>
+    <br>
+    <label for="hamster_booster">Hamster Booster</label>
+    <input type="text" name="hamster_booster" value="{{buggy['hamster_booster'] }}"/>
+    <br>
+    <label for="flag_pattern">Flag Pattern</label>
+    <select name="flag_pattern">
+      <option>Plain</option>
+      <option>V-Stripe</option>
+      <option>H-Stripe</option>
+      <option>D-Stripe</option>
+      <option>Checker</option>
+      <option>Spot</option>
+    </select>
+    <br>
     <label for ='flag_color'>Colour of Flag:</label>
     <input type="color" name="flag_color" />
+    <label for="flag_color_secondary">Other flag color</label>
+    <input type="color" name="flag_color_secondary"/>
+    <br>
+    <label for="tyres">Type of tyres</label>
+    <select name="tyres">
+      <option>Knobbly</option>
+      <option>Slick</option>
+      <option>Steelband</option>
+      <option>Reactive</option>
+      <option>Maglev</option>
+    </select>
+    <br>
+    <label for="qty_tyres">Number of Tyres</label>
+    <input type="text" name="qty_tyres" value="{{ buggy['qty_tyres'] }}"/>
+    <br>
+    <label for="armour">Armour</label>
+    <select name="armour">
+      <option>None</option>
+      <option>Wood</option>
+      <option>Aluminium</option>
+      <option>Thinsteel</option>
+      <option>Thicksteel</option>
+      <option>Titanium</option>
+    </select>
+    <br>
+    <label for="attack">Offensive capability</label>
+    <select name="attack">
+      <option>None</option>
+      <option>Spike</option>
+      <option>Flame</option>
+      <option>Charge</option>
+      <option>Biohazard</option>
+    </select>
+    <select name="attack">
+      <option>None</option>
+      <option>Spike</option>
+      <option>Flame</option>
+      <option>Charge</option>
+      <option>Biohazard</option>
+    </select>
+    <select name="attack">
+      <option>None</option>
+      <option>Spike</option>
+      <option>Flame</option>
+      <option>Charge</option>
+      <option>Biohazard</option>
+    </select>
+    <select name="attack">
+      <option>None</option>
+      <option>Spike</option>
+      <option>Flame</option>
+      <option>Charge</option>
+      <option>Biohazard</option>
+    </select>
+    <select name="attack">
+      <option>None</option>
+      <option>Spike</option>
+      <option>Flame</option>
+      <option>Charge</option>
+      <option>Biohazard</option>
+    </select>
+    <br>
+    <label for="qty_attacks">Number of Attacks</label>
+    <input type="text" name="qty_attacks" value="{{ buggy['qty_attacks'] }}"/>
+    <br>
+    <label for="fireproof">Fireproofing</label>
+    <select name="fireproof">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+    <br>
+    <label for="insulated">Insulation</label>
+    <select name="insulated">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+    <br>
+    <label for="antibiotic">Biohazard defences</label>
+    <select name="antibiotic">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+    <br>
+    <label for="banging">Sound system</label>
+    <select name="banging">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+    <br>
+    <label for="algo">Race Computer Behaviour</label>
+    <select name="algo">
+      <option>Defensive</option>
+      <option>Aggressive</option>
+      <option>Steady</option>
+      <option>Titfortat</option>
+      <option>Random</option>
+      <option>Buggy</option>
+    </select>
     <br>
     <input type="submit" class="button">
   </form>
