@@ -8,20 +8,18 @@ body {
   padding: 0;
   font-size: 1.2em;
   color: #fffbfb;
-  background: repeating-linear-gradient(
-    45deg,
-    #ffffee,
-    #ffffee 2em,
-    #eeeeee 2em,
-    #eeeeee 4em
-  );
+  background-image: url(AH.jpg);
+  background-attachment: fixed;
+  background-size: 75px 50px;
 }
 .main-content {
   min-height:100vh;
   padding: 1em;
   background-image: url(buggy.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed;
   margin: 0 0 0 3em;
 }
 h1 {

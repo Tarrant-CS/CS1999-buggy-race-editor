@@ -4,6 +4,8 @@
 
   <h1>Buggy</h1>
 
+{% for buggy in buggies %}
+
   <table>
    <tr>
      <td>ID:</td> <td> {{ buggy['id'] }} </td>
@@ -62,7 +64,15 @@
     <tr>
       <td>Race Computer Behaviour</td> <td> {{ buggy['algo'] }}</td>
     </tr>
+    <tr>
+      <td colspan="2"> <a href="/edit/{{ buggy['id'] }}">Edit Data</a></td>></td>
+    </tr>
+    <tr>
+      <td colspan="2"> <a href="/delete/{{ buggy['id'] }}">Delete Data</a></td>
+    </tr>
   </table>
+
+{% endfor %}
   
   <p>
     <a href="/" class="button">home</a>
