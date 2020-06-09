@@ -1,13 +1,41 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, session, redirect, url_for
 import sqlite3 as sql
 app = Flask(__name__)
+app.secret_key = ''
 
 DATABASE_FILE = "database.db"
 DEFAULT_BUGGY_ID = "1"
 
 BUGGY_RACE_SERVER_URL = "http://rhul.buggyrace.net"
 
+class User:
+  def __init__(self, id, username, password):
+    self.id = id
+    self.username = username
+    self.password = password
 
+  def __repr__(self):
+    return f'<user: {self.username}>'
+
+users = []
+users.append(User(id = 1, username = '', password = ''))
+
+
+@app.route('/login', methods = ['GET, POST'])
+def login():
+  if request.method == 'POST':
+    session.pop('user_id', None)
+
+    username = request.form['username']
+    password = request.form['password']
+
+    user =[x for x in users if x.username == username [0]]
+    if user and user.password == password:
+      session['user_id'] = user.id
+      return render_template('index.html', server_url = BUGGY_RACE_SERVER_URL)
+
+  return redirect(url_for('login'))
+      
 #------------------------------------------------------------
 # the index page
 #------------------------------------------------------------
