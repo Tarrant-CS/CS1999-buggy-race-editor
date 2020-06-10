@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class = 'cs1999-tasks'>
+
+    <div class="showoff">
+        <h2>
+            Show off part
+        </h2>
+        <p>
+            Welcome to my buggy editor folks.
+            <br>
+            My editor has gorgeous visuals and the finest memes on offer with an easy to use interface.
+            To make a buggy is quick and easy, just use the highly sophisticated drop down menu's 
+            and digit inputs and then view your buggy on the show buggies page. If you don't like your buggy 
+            or it breaks the rules simply edit or delete the buggy. Be sure not to miss out on the login feature 
+            either, however, be aware it doesn't work nor does it exist as it kept breaking my code. 
+            <br>
+            ENJOY!
+            <br>
+            Be sure not to miss out on the stunning visuals provided in the link on the index screen either. 
+        </p>
+    </div>
+
+    <div class="task">
+        <h2>0-RUN</h2>
+        <p>
+            Used git bash to set up the virtual environment on my own machine and then ran app.py in a
+            development environment to get going.
+            <br>
+            To change the template I simply went to the index.html and changed the title with something really 
+            cringey and then forgot to take it out before submitting so enjoy that
+        </p>
+    </div>
+    <div>
+        <h2>
+            1-ADD
+        </h2>
+        <p>
+            The second step was much more tedious than it was difficult. The first step for me was to change
+            buggy-form.html and add in all the different options I wanted to include using either the select tag 
+            input tag or color tag.
+            <br>
+            The next step was to edit the buggy.html which showed how the buggy turned out. This was really 
+            simple and just a case of setting up a table with labels of each buggy component and template
+            values.
+            <br>
+            The final and most tedious part of adding was to add the columns into the initialise database 
+            file using boolean, VARCHAR(20) and integer, and then also inputing all the 
+            request.form['some_buggy_component'] into the app.py file.
+        </p>
+        <h2>
+            1-VALID
+        </h2>
+        <p>
+            Just a case of making sure the inputs were digits for the integer values otherwise 
+            you would be met with an error message when submitting the values.
+        </p>
+        <h2>
+            1-STYLE
+        </h2>
+        <p>
+            I was pretty happy with the layout and didnt want to alter it too much so i decided to add 
+            some images instead. I am a huge fan of SpaceX and rockets in general so just decided 
+            to set the background image to a a falcon heavy launch and then a good old meme of 
+            Ainsley Harriot for the border image. Getting the images sized correctly and fixed was a
+            bit of a hassle as the they kept stretching the more tables I added in but then I 
+            found background-attachment fixed; which sovled the problem for me.
+        </p>
+        <h2>
+            2-EDIT
+        </h2>
+        <p>
+            This I found to be a little tricky at first but was instead just a case of adding the 
+            template values to the values tags in the buggy-form.html template.
+        </p>
+        <h2>
+            2-FORM
+        </h2>
+        <p>
+            Again, this at first I thought was tricky but good old W3SCHOOLS just showed me how to use a 
+            color tag and option tag in html which made the form look a lot nicer and made it virtually
+            impossible for the user to input something which doesn't make sense to the system.
+        </p>
+        <h2>
+            3-MULTI
+        </h2>
+        <p>
+            This was for me the most difficult thing. I kept recieving a sytanx error: WHERE, which I later 
+            learned was because I simply had a comma infront of my WHERE. It also took me hours to figure out
+            I had to put a '?' in the values bit of the cur.executre for EVERY ONE of my values in the table,
+            not just one for all the values which is why it would never load more than the qty_wheels to start 
+            with.
+        </p>
+        <h2>
+            3-EDIT
+        </h2>
+        <p>
+            This was the most enjoyable task I though (mainly because it worked first time for me) and consisted
+            of me learning about HTTP requests and the difference between GET, POST and DELETE requests, 
+            all which I later learned to read from the git bash console. The main problem with this was just
+            making sure I got the correct buggy id to edit which I discovered just meant you had to to include 
+            buggy id tags in the app route so SQL knew that's what you wanted to link.
+        </p>
+        <h2>
+            3-DEL
+        </h2>
+        <p>
+            This stage was a mixed bag. I got it working but not in the correct way. The delete function works 
+            and gets rid of the buggy from buggy.html however it is still using a GET request and not a DEL 
+            request which kind of breaks the JSON page but I couldn't figure out how to change the request type
+            as all the tutorials on youtube etc just use one or two html files which I couldn't figure 
+            out how to translate into this project.
+        </p>
+        <h2>
+            4-USERS
+        </h2>
+        <p>
+            This was the most frustrating part of the project. I am pretty sure I got the code correct however 
+            I never found out how to force the webserver to show the /login page before the index.html. I tried to 
+            MyLoginManager() from flask but that just tended to break everything so I just took it out. I also
+            tried hashing the passwords I created using werkzeug.security but that also broke my webserver
+            so I took that out to. This is something I found really interesting nonetheless.
+        </p>
+    </div>
+</section>
+
+{% endblock %}

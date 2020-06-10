@@ -124,6 +124,10 @@ def create_buggy():
     finally:
       con.close()
       return render_template("updated.html", msg = msg)
+
+@app.route('/poster')
+def poster():
+  return render_template('poster.html')
     
 
   
